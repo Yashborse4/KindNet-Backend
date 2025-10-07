@@ -1,0 +1,64 @@
+{
+  "environment": "production",
+  "debug": false,
+  "testing": false,
+  "logging": {
+    "level": "INFO",
+    "format": "json",
+    "console_output": false,
+    "file_output": true,
+    "max_file_size": "50MB",
+    "backup_count": 10,
+    "structured_logging": true
+  },
+  "database": {
+    "auto_backup": true,
+    "backup_interval": 1800,
+    "validate_on_startup": true,
+    "encryption_enabled": true
+  },
+  "api": {
+    "cors": {
+      "origins": ["https://your-frontend-domain.com"],
+      "methods": ["GET", "POST"],
+      "allow_headers": ["Content-Type", "Authorization"]
+    },
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 30,
+      "burst_limit": 5
+    },
+    "security": {
+      "require_https": true,
+      "require_api_key": true,
+      "request_size_limit": "1MB"
+    }
+  },
+  "openai": {
+    "timeout": {
+      "connect": 10,
+      "read": 30
+    },
+    "retry": {
+      "max_attempts": 3,
+      "backoff_factor": 3
+    }
+  },
+  "monitoring": {
+    "detailed_metrics": true,
+    "performance_profiling": false,
+    "health_checks": {
+      "enabled": true,
+      "interval": 15
+    },
+    "alerts": {
+      "enabled": true,
+      "error_threshold": 5,
+      "latency_threshold": 2000
+    }
+  },
+  "caching": {
+    "redis_enabled": true,
+    "ttl_seconds": 7200
+  }
+}

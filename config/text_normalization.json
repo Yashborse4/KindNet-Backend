@@ -1,0 +1,79 @@
+{
+  "leet_speak_mappings": {
+    "common": {
+      "@": "a",
+      "4": "a", 
+      "3": "e",
+      "1": "i",
+      "!": "i",
+      "0": "o",
+      "5": "s",
+      "7": "t",
+      "$": "s",
+      "+": "t",
+      "8": "b",
+      "6": "g",
+      "9": "g",
+      "2": "z"
+    },
+    "advanced": {
+      "|-|": "h",
+      "|<": "k",
+      "|\\/|": "m",
+      "|\\|": "n",
+      "|_|": "u",
+      "\\/\\/": "w",
+      "><": "x",
+      "/\\": "a"
+    }
+  },
+  "unicode_normalizations": {
+    "diacritics_removal": true,
+    "case_folding": true,
+    "unicode_category_filter": ["Ll", "Lu", "Lt", "Lm", "Lo", "Nd"]
+  },
+  "punctuation_rules": {
+    "remove_excessive": {
+      "!": {"max": 1, "replacement": "!"},
+      "?": {"max": 1, "replacement": "?"},
+      ".": {"max": 3, "replacement": "..."}
+    },
+    "preserve_emoticons": true,
+    "preserve_urls": true
+  },
+  "word_variations": {
+    "common_misspellings": {
+      "maderchood": "madarchod",
+      "maderchod": "madarchod",
+      "madarchood": "madarchod",
+      "motherchod": "madarchod",
+      "benchood": "bhenchod",
+      "benchod": "bhenchod",
+      "banchod": "bhenchod",
+      "fukk": "fuck",
+      "fuuk": "fuck",
+      "fuk": "fuck",
+      "phuck": "fuck",
+      "shyt": "shit",
+      "sht": "shit",
+      "sh1t": "shit",
+      "btch": "bitch",
+      "b1tch": "bitch",
+      "biatch": "bitch",
+      "a55": "ass",
+      "a$$": "ass",
+      "azz": "ass",
+      "azzhole": "asshole",
+      "a$$hole": "asshole"
+    },
+    "elongation_threshold": 3,
+    "handle_repeated_chars": true
+  },
+  "tokenization": {
+    "preserve_hashtags": true,
+    "preserve_mentions": true,
+    "split_camelcase": true,
+    "min_token_length": 2,
+    "max_token_length": 50
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "detection": {
+    "thresholds": {
+      "confidence": {
+        "default": 0.7,
+        "strict": 0.9,
+        "lenient": 0.5
+      },
+      "severity": {
+        "low": 0.3,
+        "medium": 0.6,
+        "high": 0.8,
+        "critical": 0.95
+      },
+      "context": {
+        "aggressive_punctuation": 0.1,
+        "caps_lock": 0.15,
+        "personal_targeting": 0.2,
+        "command_structure": 0.15
+      }
+    },
+    "weights": {
+      "local_detection": 0.4,
+      "openai_detection": 0.6,
+      "sentiment_analysis": 0.2,
+      "context_analysis": 0.3,
+      "intent_classification": 0.4
+    },
+    "limits": {
+      "max_text_length": 5000,
+      "min_text_length": 1,
+      "max_batch_size": 100,
+      "max_words_per_request": 50,
+      "max_processing_time": 30
+    },
+    "features": {
+      "enable_sentiment_analysis": true,
+      "enable_context_analysis": true,
+      "enable_intent_classification": true,
+      "enable_openai_fallback": true,
+      "enable_caching": true,
+      "enable_rate_limiting": true,
+      "enable_detailed_logging": true
+    }
+  },
+  "text_processing": {
+    "normalization": {
+      "convert_leet_speak": true,
+      "remove_excessive_punctuation": true,
+      "handle_common_misspellings": true,
+      "preserve_case_for_analysis": false
+    },
+    "patterns": {
+      "excessive_exclamation": "[!]{2,}",
+      "caps_lock_aggression": "[A-Z]{4,}",
+      "aggressive_punctuation": "[?!]{3,}",
+      "personal_targeting": "\\b(you|your|yourself)\\b",
+      "command_structure": "\\b(should|must|need to|have to)\\s+\\w+"
+    }
+  },
+  "api": {
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 60,
+      "burst_limit": 10,
+      "cleanup_interval": 300
+    },
+    "caching": {
+      "enabled": true,
+      "ttl_seconds": 3600,
+      "max_cache_size": 1000,
+      "cleanup_interval": 1800
+    },
+    "validation": {
+      "strict_content_type": true,
+      "max_content_length": 16384,
+      "require_user_agent": false
+    }
+  },
+  "openai": {
+    "retry": {
+      "max_attempts": 3,
+      "backoff_factor": 2,
+      "initial_delay": 1
+    },
+    "timeout": {
+      "connect": 10,
+      "read": 30
+    },
+    "models": {
+      "primary": "gpt-4",
+      "fallback": "gpt-3.5-turbo"
+    }
+  },
+  "monitoring": {
+    "metrics": {
+      "enabled": true,
+      "collection_interval": 60,
+      "retention_days": 30
+    },
+    "health_checks": {
+      "enabled": true,
+      "interval": 30,
+      "timeout": 5
+    },
+    "alerts": {
+      "enabled": false,
+      "error_threshold": 10,
+      "latency_threshold": 5000
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "api": {
+    "responses": {
+      "success": {
+        "health_check": "Cyberbullying Detection API is running successfully",
+        "detection_complete": "Text analysis completed successfully",
+        "batch_complete": "Batch analysis completed successfully",
+        "words_added": "New words added to database successfully",
+        "stats_retrieved": "Statistics retrieved successfully"
+      },
+      "errors": {
+        "invalid_content_type": "Content-Type must be application/json",
+        "missing_text_field": "Missing 'text' field in request body",
+        "empty_text": "Text field cannot be empty",
+        "missing_texts_field": "Missing 'texts' field in request body",
+        "invalid_texts_format": "'texts' must be a non-empty array",
+        "batch_size_exceeded": "Maximum 100 texts allowed per batch",
+        "missing_words_field": "Missing 'words' field in request body",
+        "invalid_words_format": "'words' must be a non-empty array",
+        "no_valid_words": "No valid words provided",
+        "text_must_be_string": "Text must be a string",
+        "endpoint_not_found": "Endpoint not found",
+        "method_not_allowed": "Method not allowed",
+        "internal_server_error": "Internal server error",
+        "openai_unavailable": "OpenAI service is currently unavailable",
+        "ai_analysis_failed": "AI analysis failed, falling back to local detection"
+      }
+    },
+    "explanations": {
+      "no_bullying": "No cyberbullying detected. The message appears to be safe.",
+      "bullying_detected": "Cyberbullying detected with {severity} severity ({confidence} confidence).",
+      "categories_detected": "Detected categories: {categories}.",
+      "action_block": "Immediate action recommended.",
+      "action_escalate": "Consider escalating to human moderator.",
+      "action_warn": "Warning recommended.",
+      "single_word_safe": "Single word without harmful context - likely safe.",
+      "context_required": "This word requires context analysis for accurate detection."
+    }
+  },
+  "detection": {
+    "categories": {
+      "direct_insults": "Direct Insults and Name-calling",
+      "threats": "Threats and Intimidation", 
+      "social_exclusion": "Social Exclusion and Isolation",
+      "harassment": "Harassment and Stalking",
+      "profanity": "Profanity and Offensive Language",
+      "cyberstalking": "Cyberstalking and Persistent Contact",
+      "doxxing": "Doxxing and Privacy Violation",
+      "hate_speech": "Hate Speech and Discrimination",
+      "body_shaming": "Body Shaming and Appearance Attacks",
+      "impersonation": "Impersonation and Identity Theft"
+    },
+    "severity_descriptions": {
+      "none": "No harmful content detected",
+      "low": "Mild inappropriate language or behavior",
+      "medium": "Clear bullying behavior requiring attention", 
+      "high": "Severe bullying with potential for significant harm",
+      "critical": "Extreme threats requiring immediate intervention"
+    },
+    "recommended_actions": {
+      "ignore": "Content appears safe - no action needed",
+      "warn": "Issue warning to user about inappropriate behavior",
+      "block": "Block or restrict user access immediately", 
+      "escalate": "Escalate to human moderator for review",
+      "report": "Report to authorities if legally required"
+    }
+  },
+  "logging": {
+    "levels": {
+      "info": "General information about system operation",
+      "warning": "Warning conditions that should be noted",
+      "error": "Error conditions that affect functionality",
+      "critical": "Critical conditions requiring immediate attention"
+    },
+    "events": {
+      "detection_start": "Starting bullying detection analysis",
+      "detection_complete": "Bullying detection analysis completed",
+      "batch_processing": "Processing batch of {count} texts",
+      "words_added": "Added {count} new words to database",
+      "database_updated": "Local database updated successfully",
+      "openai_request": "Making request to OpenAI API",
+      "openai_response": "Received response from OpenAI API",
+      "cache_hit": "Cache hit for analysis request",
+      "cache_miss": "Cache miss - performing new analysis"
+    }
+  }
+}

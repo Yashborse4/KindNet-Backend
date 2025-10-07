@@ -1,0 +1,58 @@
+{
+  "language_indicators": {
+    "hindi": {
+      "script_ranges": ["\\u0900-\\u097F"],
+      "word_indicators": [
+        "teri", "mera", "tumhara", "aapka", "hamara",
+        "maa", "baap", "behen", "bhai", "beta",
+        "kya", "kaise", "kaha", "kab", "kyun",
+        "hai", "hain", "tha", "thi", "the",
+        "aur", "ya", "lekin", "magar", "par",
+        "chutiya", "gandu", "madarchod", "bhenchod",
+        "ullu", "patha", "gaand", "lund", "randi",
+        "harami", "kutte", "bhosdike", "chod", "kaminey",
+        "bewakoof", "bakchod", "saala", "kamina"
+      ],
+      "phrase_indicators": [
+        "teri maa", "tera baap", "bhad mein", "mar ja"
+      ],
+      "confidence_threshold": 0.3
+    },
+    "marathi": {
+      "script_ranges": ["\\u0900-\\u097F"],
+      "word_indicators": [
+        "tujhi", "majhi", "tyachi", "tichi", "amchi",
+        "aai", "baba", "bahin", "bhau", "mulga",
+        "kay", "kasa", "kuthe", "kadhi", "kashala",
+        "aahe", "aahes", "aahet", "hota", "hoti",
+        "ani", "kinva", "pan", "paran", "tar",
+        "bokya", "gandya", "lavdya", "bhikari",
+        "zavadya", "randecha", "bhadvya", "shendya"
+      ],
+      "phrase_indicators": [
+        "tujhi aai", "aai ghalya", "tujhya aaichi"
+      ],
+      "confidence_threshold": 0.3
+    },
+    "english": {
+      "script_ranges": ["\\u0041-\\u005A", "\\u0061-\\u007A"],
+      "word_indicators": [
+        "the", "is", "are", "was", "were",
+        "you", "your", "yours", "yourself",
+        "stupid", "idiot", "moron", "dumb", "retard",
+        "fuck", "shit", "bitch", "ass", "damn"
+      ],
+      "phrase_indicators": [
+        "fuck you", "go to hell", "kiss my"
+      ],
+      "confidence_threshold": 0.2
+    }
+  },
+  "detection_rules": {
+    "multi_language_support": true,
+    "default_language": "english",
+    "min_words_for_detection": 2,
+    "script_detection_enabled": true,
+    "contextual_detection": true
+  }
+}

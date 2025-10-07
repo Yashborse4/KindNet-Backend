@@ -1,0 +1,92 @@
+{
+  "context_analysis": {
+    "aggressive_indicators": {
+      "punctuation_patterns": [
+        {"pattern": "!{3,}", "weight": 0.1, "name": "excessive_exclamation"},
+        {"pattern": "\\?{3,}", "weight": 0.1, "name": "excessive_question"},
+        {"pattern": "[!?]{3,}", "weight": 0.15, "name": "mixed_aggressive_punctuation"}
+      ],
+      "caps_patterns": [
+        {"pattern": "[A-Z]{4,}", "min_percentage": 0.5, "weight": 0.15, "name": "caps_lock_aggression"},
+        {"pattern": "\\b[A-Z]{2,}\\b", "min_count": 3, "weight": 0.1, "name": "shouting_words"}
+      ],
+      "repetition_patterns": [
+        {"type": "word_repetition", "min_count": 3, "weight": 0.2},
+        {"type": "char_repetition", "min_length": 4, "weight": 0.1}
+      ]
+    },
+    "targeting_indicators": {
+      "personal_pronouns": ["you", "your", "yours", "yourself", "u", "ur", "urs"],
+      "targeting_threshold": 2,
+      "weight": 0.2
+    },
+    "command_patterns": [
+      {"words": ["should", "must", "need to", "have to", "better"], "weight": 0.15},
+      {"words": ["go", "get", "stop", "shut"], "weight": 0.1}
+    ]
+  },
+  "severity_calculation": {
+    "base_weights": {
+      "single_word": 0.3,
+      "phrase": 0.5,
+      "pattern": 0.4,
+      "context": 0.2
+    },
+    "severity_levels": {
+      "critical": {"threshold": 0.9, "multiplier": 2.0},
+      "high": {"threshold": 0.7, "multiplier": 1.5},
+      "medium": {"threshold": 0.4, "multiplier": 1.0},
+      "low": {"threshold": 0.2, "multiplier": 0.5}
+    },
+    "combination_rules": {
+      "multiple_detections_boost": {
+        "2_items": 1.2,
+        "3_items": 1.4,
+        "4_plus_items": 1.6
+      },
+      "cross_language_penalty": 0.9,
+      "context_boost_max": 0.3
+    }
+  },
+  "phrase_detection": {
+    "flexibility": {
+      "max_words_between": 2,
+      "allow_punctuation": true,
+      "case_insensitive": true
+    },
+    "scoring": {
+      "exact_match": 1.0,
+      "one_word_between": 0.8,
+      "two_words_between": 0.6
+    },
+    "minimum_phrase_length": 2
+  },
+  "machine_learning_features": {
+    "enabled": true,
+    "features": [
+      "word_embeddings",
+      "character_ngrams",
+      "pos_tags",
+      "dependency_parsing",
+      "sentiment_scores"
+    ],
+    "model_types": ["transformer", "ensemble"],
+    "confidence_threshold": 0.7
+  },
+  "real_time_features": {
+    "caching": {
+      "enabled": true,
+      "ttl_seconds": 3600,
+      "max_size": 10000
+    },
+    "batch_processing": {
+      "enabled": true,
+      "batch_size": 100,
+      "timeout_ms": 1000
+    },
+    "streaming": {
+      "enabled": true,
+      "chunk_size": 512
+    }
+  }
+}
