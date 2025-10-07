@@ -1,0 +1,302 @@
+{
+  "bullying_categories": {
+    "direct_insults": {
+      "keywords": [
+        "mental",
+        "skinny",
+        "alone",
+        "besharam",
+        "kachra",
+        "terrorist",
+        "lunatic",
+        "madarchood",
+        "chakke",
+        "maderchood",
+        "benchood",
+        "gay",
+        "sukda",
+        "weirdo",
+        "coward",
+        "dhakkan",
+        "trash",
+        "bigot",
+        "nig",
+        "nalak",
+        "stalker",
+        "whore",
+        "mote",
+        "bhikari",
+        "nalaayak",
+        "hijra",
+        "nalla",
+        "jhatu",
+        "idiot",
+        "baklol",
+        "scumbag",
+        "faggot",
+        "douche",
+        "chapri",
+        "crazy",
+        "bakwas",
+        "faltu",
+        "retard",
+        "kaamchor",
+        "katela",
+        "nobody",
+        "loser",
+        "ugly",
+        "haddi",
+        "hatela",
+        "lafanga",
+        "ghatiya",
+        "disgusting",
+        "freak",
+        "pathetic",
+        "nasty",
+        "keeda",
+        "homo",
+        "kutta",
+        "pussy",
+        "jhakkas",
+        "bastard",
+        "tapori",
+        "langda",
+        "khotya",
+        "creep",
+        "chappri",
+        "racist",
+        "moron",
+        "duffer",
+        "waste",
+        "stupid",
+        "kanjar",
+        "chinar",
+        "haraami",
+        "failure",
+        "jhalla",
+        "bawla",
+        "kamchor",
+        "nazi",
+        "chirkut",
+        "andha",
+        "tharki",
+        "paagal",
+        "meetha",
+        "weakling",
+        "outcast",
+        "garbage",
+        "dumb",
+        "pervert",
+        "bhand",
+        "cheap",
+        "sissy",
+        "takla",
+        "chipkali",
+        "slut",
+        "useless",
+        "psycho",
+        "sicko",
+        "gross",
+        "worthless",
+        "jerk",
+        "fat",
+        "dyke",
+        "gaand",
+        "bhosdike",
+        "bewakoof",
+        "bevakuf",
+        "randi",
+        "chutiya",
+        "lund",
+        "suar",
+        "maada",
+        "ullu",
+        "kaminey",
+        "nalayak",
+        "gaandu",
+        "kutte",
+        "harami",
+        "gandu",
+        "haraamkhor",
+        "bokya",
+        "gandya",
+        "lavdya",
+        "bhikari",
+        "dumbass",
+        "asshole",
+        "bitch",
+        "banchod",
+        "bhenchod",
+        "madarchod",
+        "maderchod",
+        "chodu",
+        "motherchod",
+        "chod",
+        "benchod",
+        "bakchod"
+      ],
+      "multi_word_phrases": [
+        "you're an idiot",
+        "you smell",
+        "you're a waste of space",
+        "raand ka baccha",
+        "you're disgusting",
+        "everyone thinks you're weird",
+        "you have no life",
+        "you're the worst",
+        "get lost",
+        "your family is trash",
+        "bhootni ke",
+        "get a life",
+        "you're terrible",
+        "you dress badly",
+        "everyone hates you",
+        "you're pathetic",
+        "you suck",
+        "you're poor",
+        "you're weird",
+        "you have no friends",
+        "you're useless",
+        "you're stupid",
+        "gandi soch",
+        "you're ugly",
+        "kutti cheez",
+        "you're nothing",
+        "you're worthless",
+        "you're a failure",
+        "you're a loser",
+        "shut up",
+        "go away",
+        "muh tod dunga",
+        "freak show",
+        "you're too skinny",
+        "i hate you",
+        "we all hate you",
+        "you're so annoying",
+        "you look terrible",
+        "you're fat",
+        "you don't belong here",
+        "you're so dumb",
+        "your parents hate you",
+        "gaand fat gayi",
+        "teri behen ki",
+        "teri maa ka",
+        "behen chod",
+        "lund le",
+        "maa chod",
+        "ullu de pathe",
+        "khandani harami",
+        "ullu ka patha",
+        "teri maa ki",
+        "teri gaand maaru",
+        "tera baap ka",
+        "aai ghalya",
+        "tujhi aai"
+      ],
+      "patterns": [
+        "\\byou\\s+are\\s+(so\\s+)?(stupid|ugly|worthless)",
+        "\\bgo\\s+die\\b"
+      ],
+      "severity": "medium",
+      "confidence_boost": 0.4
+    },
+    "threats": {
+      "keywords": [
+        "friendless"
+      ],
+      "multi_word_phrases": [
+        "kill yourself",
+        "go kill yourself",
+        "you should die",
+        "kys",
+        "go die"
+      ],
+      "patterns": [
+        "\\bkill\\s+yourself\\b",
+        "\\bi\\s+will\\s+hurt\\s+you\\b",
+        "\\bkys\\b"
+      ],
+      "severity": "high",
+      "confidence_boost": 0.6
+    },
+    "social_exclusion": {
+      "keywords": [
+        "friendless",
+        "alone",
+        "outcast",
+        "nobody"
+      ],
+      "multi_word_phrases": [
+        "nobody likes you",
+        "nobody cares about you"
+      ],
+      "patterns": [
+        "\\bnobody\\s+(likes|wants|cares)\\s+(about\\s+)?you\\b"
+      ],
+      "severity": "medium",
+      "confidence_boost": 0.4
+    },
+    "harassment": {
+      "keywords": [
+        "freak",
+        "weirdo",
+        "creep",
+        "stalker"
+      ],
+      "patterns": [
+        "\\byou\\s+(creep|freak)\\b"
+      ],
+      "severity": "medium",
+      "confidence_boost": 0.35
+    }
+  },
+  "severity_patterns": {
+    "high": [
+      "\\b(kill\\s+yourself|end\\s+your\\s+life|go\\s+die|kys)\\b"
+    ],
+    "medium": [
+      "\\b(stupid|ugly|worthless|pathetic|madarchod|bhenchod|chutiya|gandu)\\b"
+    ],
+    "low": [
+      "\\b(weird|annoying|dumb)\\b"
+    ]
+  },
+  "context_indicators": {
+    "aggressive_tone": [
+      "!!!",
+      "CAPS LOCK",
+      "excessive punctuation"
+    ],
+    "targeting": [
+      "you",
+      "your",
+      "yourself"
+    ],
+    "intent_markers": [
+      "should",
+      "need to",
+      "must",
+      "have to"
+    ]
+  },
+  "emotional_markers": {
+    "anger": [
+      "hate",
+      "angry",
+      "furious",
+      "rage"
+    ],
+    "disgust": [
+      "disgusting",
+      "gross",
+      "sick",
+      "revolting"
+    ],
+    "contempt": [
+      "pathetic",
+      "worthless",
+      "useless",
+      "waste"
+    ]
+  }
+}
