@@ -3,6 +3,11 @@
 __pycache__/
 *.pyc
 bullying_detection.log
+logs/
 .env
 .DS_Store
-
+node_modules/
+Frontend/node_modules/
+Frontend/build/
+*.rar
+*.zip

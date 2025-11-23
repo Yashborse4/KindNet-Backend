@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-black min-h-screen font-sans text-white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Glass morphism effects */
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-xl border border-white/10;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Modern card styles */
+  .card {
+    @apply bg-white/5 border border-white/10 rounded-xl backdrop-blur-xl;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-dark {
+    @apply bg-black/40 border border-white/10 rounded-xl backdrop-blur-xl;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Chat bubbles */
+  .chat-bubble {
+    @apply relative px-5 py-3 rounded-2xl max-w-xs md:max-w-md break-words;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .chat-bubble-user {
+    @apply bg-white text-black ml-auto font-medium;
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+  }
+  
+  .chat-bubble-other {
+    @apply bg-gray-800/80 text-white mr-auto border border-white/10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    @apply bg-white text-black px-6 py-3 rounded-xl font-medium transition-all duration-200 hover:bg-gray-100 hover:shadow-lg;
+    box-shadow: 0 2px 12px rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-secondary {
+    @apply bg-white/10 text-white px-6 py-3 rounded-xl font-medium border border-white/20 transition-all duration-200 hover:bg-white/20 hover:border-white/30;
+    backdrop-filter: blur(10px);
+  }
+  
+  .btn-icon {
+    @apply w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 border border-white/10 hover:bg-white/10 hover:border-white/20;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Input styles */
+  .input-modern {
+    @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all duration-200;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Scrollbar styles */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-modern {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  }
+  
+  .scrollbar-modern::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-modern::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-modern::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-modern::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Status indicators */
+  .status-online {
+    @apply w-3 h-3 bg-green-400 rounded-full animate-pulse;
+    box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+  }
+  
+  .status-processing {
+    @apply w-3 h-3 bg-blue-400 rounded-full animate-pulse;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.6);
+  }
+  
+  .status-warning {
+    @apply w-3 h-3 bg-red-400 rounded-full animate-pulse;
+    box-shadow: 0 0 6px rgba(239, 68, 68, 0.6);
+  }
+  
+  /* Animations */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Code styles */
+code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  @apply bg-white/10 px-2 py-1 rounded text-sm;
+}

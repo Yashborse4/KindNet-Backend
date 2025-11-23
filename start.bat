@@ -1,0 +1,16 @@
+@echo off
+echo Starting Cyberbullying Detection System...
+echo.
+echo Starting Backend (Flask API)...
+start "Backend" cmd /k "cd Backend && python app.py"
+timeout /t 3 /nobreak
+echo.
+echo Starting Frontend (React App)...
+start "Frontend" cmd /k "cd Frontend && npm start"
+echo.
+echo Both services are starting...
+echo Backend: http://localhost:5000
+echo Frontend: http://localhost:3000
+echo.
+echo Press any key to exit...
+pause
